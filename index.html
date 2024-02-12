@@ -84,6 +84,13 @@
             center: [-122.31768,47.62070] // starting center
         });
 
+        map.addControl(new mapboxgl.ScaleControl({
+            maxWidth: 200,
+            unit: 'imperial'
+        }));
+
+        map.addControl(new mapboxgl.NavigationControl({visualizePitch: true}), 'top-left');
+
         map.on('load', () => { //simplifying the function statement: arrow with brackets to define a function
 
             map.addSource('custom-tiles', {
